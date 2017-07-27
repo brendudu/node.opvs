@@ -4,11 +4,13 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const http = require('http');
 
 const index = require('./routes/index');
 const users = require('./routes/users');
 
 const app = express();
+const server = http.createServer(app);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -43,8 +45,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-server.listen(app.get('port'), function () {
-    console.log("Express server listening on port " + app.get('port'));
+server.listen('3000', function () {
+    console.log("Express server listening on port " + '3000');
 });
 
 module.exports = app;
