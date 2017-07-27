@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome #{employee.name}
+  for item in employee
+    p=item
